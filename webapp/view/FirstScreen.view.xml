@@ -1,0 +1,33 @@
+<mvc:View controllerName="z543approvel.controller.FirstScreen"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:F="sap.ui.layout.form" xmlns:C="sap.ui.core" xmlns:Tab="sap.ui.table">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Tab:Table visibleRowCountMode="Auto" id="FirstTable" rows="{oTableDataModel>/aTableData}" >
+                <Tab:extension>
+                    <OverflowToolbar id="Table_OverflowToolbar"  style="Clear">
+                        <ToolbarSpacer id="Table_ToolbarSpacer" />
+                        <Button id="Table_AddButton" icon="sap-icon://add" tooltip="Save Table records" press="AddSingleEmptyRow"/>
+                        <Button id="Table_DeleteButton" icon="sap-icon://delete" tooltip="Save Table records" press="DeleteTables_SelectedRow"/>
+                        <Button id="Table_SaveButton" icon="sap-icon://save" tooltip="Save Table records" press="SaveTableData"/>
+                        <Button id="Table_SaveButton1" text="Call Data" press="callData"/>
+                    </OverflowToolbar>
+                </Tab:extension>           
+                <Tab:columns>
+                    <Tab:Column id="Table_tc1" >
+                        <Label id="Table_Label1" text="Batch" />
+                        <Tab:template>
+                            <Input id="Table_Input1" type="Text" maxLength="40" editable="{oTableDataModel>KeyEditable}" value="{oTableDataModel>Batch}"/>
+                        </Tab:template>
+                    </Tab:Column>
+                    <Tab:Column id="Table_tc2" >
+                        <Label id="Table_Label2" text="Weft" />
+                        <Tab:template>
+                            <Input id="Table_Input2" type="Text" maxLength="40" editable="{oTableDataModel>KeyEditable}" value="{oTableDataModel>Weft}"/>
+                        </Tab:template>
+                    </Tab:Column>
+                </Tab:columns>
+            </Tab:Table>       
+        </content>
+    </Page>
+</mvc:View>
